@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -25,13 +26,21 @@ public class LoteriasUpdate {
     public void checkForUpdates() {
         for (Loteria loteria : Loteria.values()) {
             try {
-                loteriaUpdateTask.checkForUpdates(loteria.getNome());
+                if (loteria == Loteria.LOTOFACIL) {
+                    loteriaUpdateTask.checkForUpdates(loteria.getNome());
+                }                
             } catch (Exception e) {
                 System.out.println("Erro " + loteria + ": " + e.getMessage());
             }
         }
 
-        cacheManager.getCache("resultados").clear();
+        Cache cache = cacheManager.getCache("resultados");
+        if (cache != null) {
+            cache.clear();
+        } else {
+            // opcional: logar para diagnosticar caches não configurados
+            System.out.println("Cache 'resultados' não encontrado; nada a limpar.");
+        }
     }
 
     @Component

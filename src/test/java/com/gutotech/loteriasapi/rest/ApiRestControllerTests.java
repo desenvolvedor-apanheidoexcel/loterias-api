@@ -24,7 +24,7 @@ class ApiRestControllerTests {
 
 	@Test
 	void testGetLotteries() throws Exception {
-		mockMvc.perform(get("/api"))
+		mockMvc.perform(get("/apiloterias"))
 			.andDo(print())
 			.andExpect(matchAll(
 				status().isOk(),
@@ -35,7 +35,7 @@ class ApiRestControllerTests {
 	
 	@Test
 	void testGetResultByIdSuccess() throws Exception {
-		mockMvc.perform(get("/api/lotofacil/1"))
+		mockMvc.perform(get("/apiloterias/lotofacil/1"))
 			.andDo(print())
 			.andExpect(matchAll(
 				status().isOk(),

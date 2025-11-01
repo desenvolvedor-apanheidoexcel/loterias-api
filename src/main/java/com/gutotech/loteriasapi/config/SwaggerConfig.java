@@ -29,7 +29,7 @@ public class SwaggerConfig {
                 .title("Loterias API REST")
                 .description("API Gratuita de resultados de jogos das Loterias CAIXA.")
                 .version("1.0")
-                .contact(new Contact("Gustavo Alves", "https://github.com/guto-alves", "gustavoalvesb.dealmeida@gmail.com"))
+                .contact(new Contact("Fabio Ferreira / Gustavo Alves", "https://github.com/guto-alves", "desenvolvedor.apanheidoexcel@gmail.com"))
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
                 .build();

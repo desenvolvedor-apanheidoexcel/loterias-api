@@ -19,7 +19,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("apiloterias")
 @Api(tags = "Loterias")
 public class ApiRestController {
 

@@ -12,6 +12,13 @@
   </p>
 </p>
 
+##Versões
+0.0.1 - loterias-api-0.0.1-SNAPSHOT.jar
+Versao completa com rota de ultimo resultado, por concurso e todos.
+
+0.0.2 - loterias-api-0.0.2-SNAPSHOT.jar
+Retirado rota /"loteria" que traria todos os resultados.
+
 
 ## Doação (*Importante!*)
 

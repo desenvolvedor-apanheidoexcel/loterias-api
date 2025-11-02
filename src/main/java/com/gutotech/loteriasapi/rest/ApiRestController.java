@@ -39,16 +39,16 @@ public class ApiRestController {
         return ResponseEntity.ok(Loteria.asList());
     }
 
-    @GetMapping("{loteria}")
-    @ApiOperation(value = "Retorna todos os resultados já realizados da loteria especificada.")
-    public ResponseEntity<List<Resultado>> getResultsByLottery(
-            @ApiParam(allowableValues = ALLOWABLE_VALUES, required = true) @PathVariable("loteria") String loteria) {
-        if (!lotteries.contains(loteria)) {
-            throw new ResourceNotFoundException(String.format(invalidLotteryMessageFormat, loteria));
-        }
+    // @GetMapping("{loteria}")
+    // @ApiOperation(value = "Retorna todos os resultados já realizados da loteria especificada.")
+    // public ResponseEntity<List<Resultado>> getResultsByLottery(
+    //         @ApiParam(allowableValues = ALLOWABLE_VALUES, required = true) @PathVariable("loteria") String loteria) {
+    //     if (!lotteries.contains(loteria)) {
+    //         throw new ResourceNotFoundException(String.format(invalidLotteryMessageFormat, loteria));
+    //     }
 
-        return ResponseEntity.ok(resultadoService.findByLoteria(loteria));
-    }
+    //     return ResponseEntity.ok(resultadoService.findByLoteria(loteria));
+    // }
 
     @GetMapping("{loteria}/{concurso}")
     @ApiOperation(value = "Retorna o resultado da loteria e concurso especificado.")
